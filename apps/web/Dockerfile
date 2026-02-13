@@ -3,7 +3,7 @@ FROM node:22-alpine AS base
 
 # Install NPM globally
 RUN npm install -g npm@^11
-
+RUN npm install -g @nestjs/cli tsdown prisma typescript
 # Install system dependencies (aligned with @tambo-ai-cloud/api)
 RUN apk add --no-cache gcompat dumb-init
 
