@@ -4,6 +4,8 @@ FROM node:22-alpine AS base
 # Install NPM globally
 RUN npm install -g npm@^11
 RUN npm install -g @nestjs/cli tsdown prisma typescript
+RUN --mount=type=secret,id=TURBO_TOKEN,env=TURBO_TOKEN \
+  npx turbo run build --filter="@tambo-ai-cloud/web"
 # Install system dependencies (aligned with @tambo-ai-cloud/api)
 RUN apk add --no-cache gcompat dumb-init
 
