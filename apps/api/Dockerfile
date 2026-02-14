@@ -32,8 +32,7 @@ WORKDIR /workspace
 
 # install dependencies solo
 COPY --from=installer /workspace/out/json/ .
-RUN npm ci
-
+RUN npm ci --ignore-scripts
 # copy source from pruned output and then build
 COPY --from=installer /workspace/out/full/ .
 
