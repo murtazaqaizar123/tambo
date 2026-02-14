@@ -37,7 +37,7 @@ services:
       context: .
       dockerfile: apps/api/Dockerfile
     environment:
-      - PORT=3000
+      - PORT=3005
       - NODE_ENV=production
       - DATABASE_URL=postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-tambo}
       - API_KEY_SECRET=${API_KEY_SECRET}
